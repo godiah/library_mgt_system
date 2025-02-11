@@ -1,0 +1,16 @@
+<nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Navigation links -->
+        <div class="flex space-x-4">
+            <%= link_to "Available Books", books_path, class: ("px-3 py-2 rounded-md text-sm font-medium " + (current_page?(books_path) ? "underline text-white" : "text-gray-300 hover:text-white")) %>
+            <%= link_to "Return Book", loans_path, class: ("px-3 py-2 rounded-md text-sm font-medium " + (current_page?(loans_path) ? "underline text-white" : "text-gray-300 hover:text-white")) %>
+        </div>
+        <!-- User info and logout -->
+        <div class="flex items-center space-x-4">
+            <% if Current.user %>
+            <span class="text-gray-300 text-sm"><%= Current.user.email %></span>
+            <%= button_to "Logout", logout_path, method: :delete, class: "bg-indigo-600 text-white px-3 py-2 rounded-md text-sm font-medium" %>
+            <% end %>
+        </div>
+    </div>
+</nav>
