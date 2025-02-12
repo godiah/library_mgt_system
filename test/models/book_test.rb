@@ -2,8 +2,8 @@ require "test_helper"
 
 class BookTest < ActiveSupport::TestCase
   def setup
-    @book = books(:moby_dick)  # fixture for a book
-    @user = users(:john)       # fixture for a user (John)
+    @book = books(:moby_dick) 
+    @user = users(:john)       
   end
 
   test "should be valid with all attributes" do
