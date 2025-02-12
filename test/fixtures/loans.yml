@@ -1,13 +1,8 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: one
-  book: one
+  user: john
+  book: moby_dick
   borrowed_at: 2025-02-11 09:33:32
-  returned_at: 2025-02-11 09:33:32
-
-two:
-  user: two
-  book: two
-  borrowed_at: 2025-02-11 09:33:32
-  returned_at: 2025-02-11 09:33:32
+  due_date: 2025-02-25 09:33:32
+  returned_at:

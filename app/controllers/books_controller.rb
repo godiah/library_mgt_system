@@ -33,7 +33,7 @@ class BooksController < ApplicationController
     loan = @book.current_loan_for(Current.user)
     if loan
       loan.update(returned_at: Time.current)
-      flash[:notice] = "You have successfully returned #{@book.title}."
+      flash[:notice] = "Successfully returned #{@book.title}."
     else
       flash[:alert] = "You have not borrowed #{@book.title}."
     end

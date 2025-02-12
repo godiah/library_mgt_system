@@ -8,8 +8,11 @@ class User < ApplicationRecord
 
   validates :email, presence: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: "must be a alid email address" },
               uniqueness: true
+
   validates :password, presence: true,
-                      length: { minimum: 6 },
-                      confirmation: true
-  validates :password_confirmation, presence: true
+                       length: { minimum: 6 },
+                       confirmation: true,
+                       if: :password_digest_changed?
+  validates :password_confirmation, presence: true,
+                                    if: :password_digest_changed?
 end
